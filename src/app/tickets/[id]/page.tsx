@@ -54,7 +54,7 @@ export default async function TicketDetails({ params }: Params): Promise<JSX.Ele
         </nav>
         <div className="card">
             <h3>{ticket.title}</h3>
-            <small>Created by {ticket.user_email}</small>
+            <small>Created by {ticket.userEmail}</small>
             <p>{ticket.body}</p>
             <div className={`pill ${ticket.priority}`}>
                     {ticket.priority} priority

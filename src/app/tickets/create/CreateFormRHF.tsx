@@ -17,7 +17,7 @@ export default function CreateFormRHF(): JSX.Element {
             title: '',
             body: '',
             priority: '',
-            user_email: '',
+            userEmail: '',
         }
       });
 
@@ -29,7 +29,7 @@ export default function CreateFormRHF(): JSX.Element {
                 title: data.title,
                 body: data.body,
                 priority: data.priority,
-                user_email: data.user_email,
+                userEmail: data.userEmail,
             })
     });
 
@@ -105,7 +105,7 @@ export default function CreateFormRHF(): JSX.Element {
         <label>
           <span>User Email:</span>
           <Controller
-            name="user_email"
+            name="userEmail"
             control={control}
             rules={{
                 required: 'This field is required.',

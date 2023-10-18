@@ -3,7 +3,7 @@ export interface Ticket {
     title: string,
     body: string,
     priority: string,
-    user_email: string,
+    userEmail: string,
 }
 
 export interface Params {

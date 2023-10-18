@@ -54,7 +54,7 @@ export default function TicketList({ tickets }: ITicketListProps) {
             >
                 <div className="flex">
                     <h3>{ticket.title}</h3>
-                    <Link href={`/tickets/${ticket.id}/edit`}><HiOutlinePencil cursor="pointer" size={20} className="mx-3" /></Link>
+                    <Link href={`/tickets/${ticket.id}/edit`} className={'hover:sky-700'}><HiOutlinePencil cursor="pointer" size={20} className="mx-3" /></Link>
                     <HiOutlineTrash onClick={() => handleDeleteTodo(ticket.id)} cursor="pointer" size={20} className="mx-1" />
                 </div>
                 <Link href={`/tickets/${ticket.id}`}>

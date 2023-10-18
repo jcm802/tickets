@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { Params, Ticket } from '@/app/types/tickets';
+import { Ticket } from '@/app/types/tickets';
 import { updateTicket } from '@/app/api';
 
 interface EditFormProps {
@@ -23,33 +23,34 @@ export default function EditForm({ ticket }: EditFormProps): JSX.Element {
             title: ticket?.title,
             body: ticket?.body,
             priority: ticket?.priority,
-            user_email: ticket?.user_email,
+            userEmail: ticket?.userEmail,
         }
       });
 
-    const createNewTicket = async (data: Ticket): Promise<void> => {
+    const editTicket = async (data: Ticket): Promise<void> => {
       const res = await updateTicket({
         id: data.id,
         title: data.title,
         body: data.body,
         priority: data.priority,
-        user_email: data.user_email,
+        userEmail: data.userEmail,
       }, ticket.id);
       if (!(res instanceof Error)) {
+        router.refresh();
         router.push('/tickets');
       }
     }
 
     const onSubmit: SubmitHandler<Ticket> = async (data): Promise<void> => {
         setIsLoading(true);
-        await createNewTicket(data);
+        await editTicket(data);
       };
 
       useEffect(() => {
         setValue('title', ticket?.title);
         setValue('body', ticket?.body);
         setValue('priority', ticket?.priority);
-        setValue('user_email', ticket?.user_email);
+        setValue('userEmail', ticket?.userEmail);
       }, [ticket, setValue]);
   
     return (
@@ -112,7 +113,7 @@ export default function EditForm({ ticket }: EditFormProps): JSX.Element {
         <label>
           <span>User Email:</span>
           <Controller
-            name="user_email"
+            name="userEmail"
             control={control}
             rules={{
                 required: 'This field is required.',
