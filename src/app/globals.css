@@ -43,6 +43,23 @@ main nav {
   @apply border-0;
 }
 
+/* Icon styles */
+.icon-edit {
+  color: grey;
+}
+
+.icon-trash {
+  color: grey;
+}
+
+.icon-edit:hover {
+  color: skyblue;
+}
+
+.icon-trash:hover {
+  color: #f7022a;
+}
+
 /* button styles */
 button {
   @apply 
