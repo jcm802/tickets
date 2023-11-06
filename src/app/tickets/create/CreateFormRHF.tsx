@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { Ticket } from '@/app/types/tickets';
 
-export default function CreateFormRHF(): JSX.Element {
+export default function CreateFormRHF() {
     const router = useRouter();
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -44,9 +44,8 @@ export default function CreateFormRHF(): JSX.Element {
         setIsLoading(true);
         await createNewTicket(data);
       };
-  
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="w-1/2">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-1/2" noValidate>
         <label>
           <span>Title:</span>
           <Controller

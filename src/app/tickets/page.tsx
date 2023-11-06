@@ -8,7 +8,7 @@ async function Tickets() {
     const tickets = await getTickets();
     return (
         <main>
-            <nav>
+            <nav className='m-0 p-0 w-full flex justify-between'>
                 <div>
                     <h2>Tickets</h2>
                     <p><small>Currently open tickets.</small></p>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-export default function notFound(): JSX.Element {
+export default function notFound() {
   return (
     <main className="text-center">
         <h2 className="text-3xl">These was a problem.</h2>

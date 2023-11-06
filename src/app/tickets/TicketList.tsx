@@ -3,7 +3,7 @@ import React from 'react'
 import Link from 'next/link';
 import { Ticket } from '../types/tickets';
 import { HiOutlinePencil, HiOutlineTrash } from 'react-icons/hi';
-import { deleteTicket, getTickets } from '../api';
+import { deleteTicket } from '../api';
 import { useRouter } from 'next/navigation';
 // Server component
 
@@ -54,7 +54,7 @@ export default function TicketList({ tickets }: ITicketListProps) {
             >
                 <div className="flex">
                     <h3>{ticket.title}</h3>
-                    <Link href={`/tickets/${ticket.id}/edit`}><HiOutlinePencil cursor="pointer" size={20} className="icon-edit mx-3" /></Link>
+                    <Link href={`/tickets/${ticket.id}/edit`}><HiOutlinePencil cursor="pointer" size={20} className="icon-edit ml-4 mr-2" /></Link>
                     <HiOutlineTrash onClick={() => handleDeleteTodo(ticket.id)} cursor="pointer" size={20} className="icon-trash mx-1 hover:text-blue" />
                 </div>
                 <Link href={`/tickets/${ticket.id}`}>

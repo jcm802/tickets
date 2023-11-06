@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 // used to redirect the user on form submit
 
 // This will remain a server component, as we may have non interactive elements around the form
-export default function CreateForm(): JSX.Element {
+export default function CreateForm() {
   const router = useRouter();
 
   const [title, setTitle] = useState<string>('');
